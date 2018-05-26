@@ -7,7 +7,7 @@
   "subMetas": {
     "dog2": {
       "ver": "1.0.3",
-      "uuid": "0cb07c6d-a54d-4c32-80fb-ad3b36324822",
+      "uuid": "d0e6ca21-b33d-45e2-8da1-9e1ac3352ef9",
       "rawTextureUuid": "74cee3cf-1612-42b9-9ead-15529600b1a2",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -16,9 +16,9 @@
       "offsetY": -0.5,
       "trimX": 0,
       "trimY": 1,
-      "width": 1292,
+      "width": 1111,
       "height": 1882,
-      "rawWidth": 1292,
+      "rawWidth": 1111,
       "rawHeight": 1883,
       "borderTop": 0,
       "borderBottom": 0,
