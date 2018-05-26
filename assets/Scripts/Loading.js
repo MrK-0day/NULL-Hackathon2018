@@ -57,8 +57,53 @@ cc.Class({
                     sentences: [
                         {
                             id: 1,
-                            content: 'Trường học là ngôi nhà thứ hai của em',
+                            content: 'Chúc mừng cậu được 10 điểm',
+                            type: true,
+                        },
+                        {
+                            id: 2,
+                            content: 'Đi học chứ không phải đi diễn',
                             type: false,
+                        },
+                        {
+                            id: 3,
+                            content: 'Học ngu như con bò',
+                            type: false,
+                        },
+                        {
+                            id: 4,
+                            content: 'Nhìn mặt thấy ghét',
+                            type: false,
+                        },
+                        {
+                            id: 5,
+                            content: 'Cậu thật xinh đẹp',
+                            type: true,
+                        },
+                        {
+                            id: 6,
+                            content: 'Đóng 100.000đ, cút',
+                            type: false,
+                        },
+                        {
+                            id: 7,
+                            content: 'Thầy rất thất vọng về con',
+                            type: false,
+                        },
+                        {
+                            id: 8,
+                            content: 'Em nghĩ em là ai',
+                            type: false,
+                        },
+                        {
+                            id: 9,
+                            content: 'Cô rất tự hào về con',
+                            type: true,
+                        },
+                        {
+                            id: 10,
+                            content: 'Cho con phiếu bé ngoan',
+                            type: true,
                         }
                     ],
                 },
@@ -85,8 +130,53 @@ cc.Class({
                     sentences: [
                         {
                             id: 1,
-                            content: 'nha',
+                            content: 'Cho mày ra đường bây giờ',
                             type: false,
+                        },
+                        {
+                            id: 2,
+                            content: 'Đồ ăn hại',
+                            type: false,
+                        },
+                        {
+                            id: 3,
+                            content: 'Mày không phải con tao',
+                            type: false,
+                        },
+                        {
+                            id: 4,
+                            content: 'Mày coi con nhà người ta kìa',
+                            type: false,
+                        },
+                        {
+                            id: 5,
+                            content: 'Làm tốt lắm con trai',
+                            type: true,
+                        },
+                        {
+                            id: 6,
+                            content: 'Con là niềm tự hào',
+                            type: true,
+                        },
+                        {
+                            id: 7,
+                            content: 'Cho con 50k ăn bánh nè',
+                            type: true,
+                        },
+                        {
+                            id: 8,
+                            content: 'Biến đi',
+                            type: false,
+                        },
+                        {
+                            id: 9,
+                            content: 'Đồ thất bại',
+                            type: false,
+                        },
+                        {
+                            id: 10,
+                            content: 'Thương con lắm ý',
+                            type: true,
                         }
                     ],
                 },
@@ -113,8 +203,53 @@ cc.Class({
                     sentences: [
                         {
                             id: 1,
-                            content: 'van phong',
+                            content: 'Anh bị điên à',
                             type: false,
+                        },
+                        {
+                            id: 2,
+                            content: 'Anh làm tốt lắm',
+                            type: true,
+                        },
+                        {
+                            id: 3,
+                            content: 'Cậu là đồ ăn hại',
+                            type: false,
+                        },
+                        {
+                            id: 4,
+                            content: 'Đồ ngu',
+                            type: false,
+                        },
+                        {
+                            id: 5,
+                            content: 'Mày không có quyền lên tiếng',
+                            type: false,
+                        },
+                        {
+                            id: 6,
+                            content: 'Anh được tăng lương',
+                            type: true,
+                        },
+                        {
+                            id: 7,
+                            content: 'Cô mập như heo',
+                            type: false,
+                        },
+                        {
+                            id: 8,
+                            content: 'Người gì xấu dữ',
+                            type: false,
+                        },
+                        {
+                            id: 9,
+                            content: 'Dạo này trông bảnh thế',
+                            type: true,
+                        },
+                        {
+                            id: 10,
+                            content: 'Đi nhậu không',
+                            type: true,
                         }
                     ],
                 },
