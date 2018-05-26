@@ -46,7 +46,7 @@ cc.Class({
 
         var destroy = new cc.CallFunc(() => {
             this.node.destroy();
-            this.game.getComponent('main').decreaseBlood();
+            if (!this.type) this.game.getComponent('main').decreaseBlood();
         });
 
         var sequenceAction = new cc.Sequence(delay, removeText, moveAndResize, destroy);

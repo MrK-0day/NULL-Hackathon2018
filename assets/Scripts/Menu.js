@@ -12,7 +12,6 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        MaskNode: cc.Node
         // foo: {
         //     // ATTRIBUTES:
         //     default: null,        // The default value will be used only when the component attaching
@@ -32,15 +31,7 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
     onClickPlay: function() {
-        this.MaskNode.active = true;
-        this.MaskNode.runAction(
-            cc.sequence(
-                cc.fadeIn(0.3),
-                cc.callFunc(()=>{
-                    cc.director.loadScene('level');
-                }, this)
-            )
-        );
+        cc.director.loadScene('level');        
     },
 
     onLoad () {
