@@ -53,6 +53,8 @@ cc.Class({
 
     getEnemy: function () {
         var index = this.getRandom(0, this.enemies.length - 1);
+        while (index == this.lastEnemy) index = this.getRandom(0, this.enemies.length - 1);
+        this.lastEnemy = index;
         return this.enemies[index];
     },
 
@@ -114,6 +116,15 @@ cc.Class({
         this.heart.getComponent('heart').setHeart(this.blood);
     },
 
+    increaseBlood: function() {
+        this.count++;
+        if (this.count >= 2) {
+            this.count -= 2;
+            if (this.blood < 10) this.blood++;
+            this.heart.getComponent('heart').setHeart(this.blood);
+        }
+    },
+
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
@@ -129,6 +140,9 @@ cc.Class({
         this.speed = 1;
         this.blood = 10;
         this.fire_speed = 2;
+
+        this.lastEnemy = -1;
+        this.count = 0;
     },
 
     fire() {
