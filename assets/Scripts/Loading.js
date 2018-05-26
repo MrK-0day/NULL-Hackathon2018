@@ -40,15 +40,15 @@ cc.Class({
                     enemies: [
                         {
                             path : 'bomb_blue',
-                            location : cc.p(300,200)
+                            location : cc.p(-491,257)
                         },
                         {
                             path : 'bomb_blue',
-                            location : cc.p(0,200)
+                            location : cc.p(-23,277)
                         },
                         {
                             path : 'bomb_blue',
-                            location : cc.p(-150,200)
+                            location : cc.p(434,265)
                         }
                     ],
                     sentences: [
@@ -65,15 +65,15 @@ cc.Class({
                     enemies: [
                         {
                             path : 'bomb_blue',
-                            location : cc.p(300,200)
+                            location : cc.p(-488,377)
                         },
                         {
                             path : 'bomb_blue',
-                            location : cc.p(0,200)
+                            location : cc.p(12,371)
                         },
                         {
                             path : 'bomb_blue',
-                            location : cc.p(-150,200)
+                            location : cc.p(498,375)
                         }
                     ],
                     sentences: [
@@ -90,15 +90,15 @@ cc.Class({
                     enemies: [
                         {
                             path : 'bomb_blue',
-                            location : cc.p(300,200)
+                            location : cc.p(-537,256)
                         },
                         {
                             path : 'bomb_blue',
-                            location : cc.p(0,200)
+                            location : cc.p(-34,268)
                         },
                         {
                             path : 'bomb_blue',
-                            location : cc.p(-150,200)
+                            location : cc.p(434,271)
                         }
                     ],
                     sentences: [
