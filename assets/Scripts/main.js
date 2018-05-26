@@ -56,14 +56,33 @@ cc.Class({
         var enemy = this.getEnemy();
 
         var sentence = cc.instantiate(this.sentence);
-        sentence.getComponent('sentence').setImage(sentenceData.path);
-        sentence.getComponent('sentence').setTimetoRead(this.levelData.time_to_read);
+        sentence.getComponent('sentence').setData(this.talkFrame[this.getRandom(0, this.talkFrame.length - 1)], sentenceData.type);
+        sentence.getComponent('sentence').setTimetoRead(this.time_to_read);
         sentence.getComponent('sentence').setSpeed(this.speed);
+        sentence.getComponent('sentence').game = this;
 
         var subNode = new cc.Node('Label');
         subNode.setTag(0);
+        subNode.color = new cc.Color(0, 0, 0);
+        subNode.width = 150;
+        subNode.height = 150;
         var text = subNode.addComponent(cc.Label);
         text.string = sentenceData.content;
+        text.overflow = cc.Label.Overflow.SHRINK;
+        text.enableWrapText = true;
+        text.horizontalAlign = true;
+        text.verticalAlign = true;
+        text.fontSize = 20;
+        var widget = subNode.addComponent(cc.Widget);
+        widget.isAlignTop = true;
+        widget.top = 0;
+        widget.isAlignBottom = true;
+        widget.bottom = 14;
+        widget.isAlignLeft = true;
+        widget.left = 5;
+        widget.isAlignRight = true;
+        widget.right = 5;
+        
 
         sentence.addChild(subNode);
         sentence.setPosition(enemy.location.x + 100, enemy.location.y - 100);
@@ -85,41 +104,17 @@ cc.Class({
         }
     },
 
+    decreaseBlood: function() {
+        this.blood--;
+        console.log(this.blood);
+    },
+
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
-
-        var level = {
-            background_path: 'background',
-            stars_count: 0,
-            enemies: [
-                {
-                    path : 'bomb_blue',
-                    location : cc.p(300,200)
-                },
-                {
-                    path : 'bomb_blue',
-                    location : cc.p(0,200)
-                },
-                {
-                    path : 'bomb_blue',
-                    location : cc.p(-150,200)
-                }
-            ],
-            sentences: [
-                {
-                    id: 1,
-                    path: 'bomb_blue',
-                    content: 'con cho',
-                    type: false,
-                }
-            ],
-            time_to_read: 1,
-        };
-
-        cc.sys.localStorage.removeItem('levelData');
-        cc.sys.localStorage.setItem('levelData', JSON.stringify(level));
         this.levelData = JSON.parse(cc.sys.localStorage.getItem('levelData'));
+        this.time_to_read = JSON.parse(cc.sys.localStorage.getItem('time'));
+        this.talkFrame = JSON.parse(cc.sys.localStorage.getItem('talk_frame'));
         
         this.setBackground(this.levelData.background_path);
 
@@ -152,11 +147,11 @@ cc.Class({
 
     start () {
         //this.createSentence();
-        this.createEnemies();
+        //this.createEnemies();
         this.fire();
     },
 
     update (dt) {
-        
+        if (this.blood <= 0) cc.director.pause();
     },
 });

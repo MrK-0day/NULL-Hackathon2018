@@ -44,8 +44,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 250,
-      "height": 250
+      "width": 150,
+      "height": 150
     },
     "_rotationX": 0,
     "_rotationY": 0,
@@ -94,7 +94,9 @@
     "node": {
       "__id__": 1
     },
-    "_enabled": true
+    "_enabled": true,
+    "timeToRead": "Integer",
+    "speed": "Integer"
   },
   {
     "__type__": "cc.PrefabInfo",

@@ -33,10 +33,14 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
-        this.node.on('touchend', (e)=>{
-            // var DATA = JSON.parse(cc.sys.localStorage.getItem('DATA'));
-            // var level = DATA.alllevel[this.level];
-            // cc.sys.localStorage.setItem('levelData', JSON.stringify(level));
+        this.node.on('touchend', (e) => {
+            var DATA = JSON.parse(cc.sys.localStorage.getItem('DATA'));
+            var currentLevel = DATA.alllevel[this.level];
+            cc.sys.localStorage.removeItem('levalData');
+            cc.sys.localStorage.removeItem('time');
+            cc.sys.localStorage.setItem('levelData', JSON.stringify(currentLevel));
+            cc.sys.localStorage.setItem('time', JSON.stringify(DATA.time_to_read));
+            cc.sys.localStorage.setItem('talk_frame', JSON.stringify(DATA.talkFrame));
             cc.director.loadScene('main');
         });
     },

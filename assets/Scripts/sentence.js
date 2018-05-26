@@ -4,14 +4,20 @@ cc.Class({
     properties: {
         timeToRead: cc.Integer,
         speed: cc.Integer,
+        type: cc.Boolean, 
+        game: {
+            default: null,
+            type: cc.Node
+        }
     },
 
     //TODO: tao mot loat hieu ung: sau vai giay xoa child(0), thu nho, di chuyen
-    setImage: function(url) {
+    setData: function(image_url, sentence_type) {
         var self = this;
-        cc.loader.loadRes(url, cc.SpriteFrame, function (err, spriteFrame) {
+        cc.loader.loadRes(image_url, cc.SpriteFrame, function (err, spriteFrame) {
             self.node.getComponent(cc.Sprite).spriteFrame = spriteFrame;
         });
+        this.type = sentence_type;
     },
 
     setTimetoRead: function(time) {
@@ -40,6 +46,7 @@ cc.Class({
 
         var destroy = new cc.CallFunc(() => {
             this.node.destroy();
+            this.game.getComponent('main').decreaseBlood();
         });
 
         var sequenceAction = new cc.Sequence(delay, removeText, moveAndResize, destroy);
@@ -49,6 +56,15 @@ cc.Class({
 
     moveBack(delta) {
         var move = new cc.MoveBy(1, delta);
+        var destroy = new cc.CallFunc(() => {
+            if (this.node.x <= -cc.director.getWinSize().width/2
+                || this.node.x >= cc.director.getWinSize().width/2
+                || this.node.y <= -cc.director.getWinSize().height/2
+                || this.node.y >= cc.director.getWinSize().height/2) {
+                
+                this.node.destroy();
+            }
+        });
         var repeatForeverAction = new cc.RepeatForever(move);
         this.node.runAction(repeatForeverAction);
     },
@@ -72,6 +88,5 @@ cc.Class({
     },
 
     update (dt) {
-        
     },
 });

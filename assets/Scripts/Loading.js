@@ -35,64 +35,96 @@ cc.Class({
         var DATA = {
             alllevel: [
                 {
-                    background_path: 'background',
+                    background_path: 'LEVEL_SCHOOL',
                     stars_count: 0,
                     enemies: [
                         {
-                            path : '',
-                            location : cc.p(0,0)
+                            path : 'bomb_blue',
+                            location : cc.p(300,200)
+                        },
+                        {
+                            path : 'bomb_blue',
+                            location : cc.p(0,200)
+                        },
+                        {
+                            path : 'bomb_blue',
+                            location : cc.p(-150,200)
                         }
                     ],
                     sentences: [
                         {
                             id: 1,
-                            content: 'con cho',
+                            content: 'Trường học là ngôi nhà thứ hai của em',
                             type: false,
                         }
                     ],
                 },
                 {
-                    background_path: 'background',
+                    background_path: 'LEVEL_HOME',
                     stars_count: 0,
                     enemies: [
                         {
-                            path : '',
-                            location : cc.p(0,0)
+                            path : 'bomb_blue',
+                            location : cc.p(300,200)
+                        },
+                        {
+                            path : 'bomb_blue',
+                            location : cc.p(0,200)
+                        },
+                        {
+                            path : 'bomb_blue',
+                            location : cc.p(-150,200)
                         }
                     ],
                     sentences: [
                         {
                             id: 1,
-                            content: 'con cho',
+                            content: 'nha',
                             type: false,
                         }
                     ],
                 },
                 {
-                    background_path: 'background',
+                    background_path: 'LEVEL_OFFICE',
                     stars_count: 0,
                     enemies: [
                         {
-                            path : '',
-                            location : cc.p(0,0)
+                            path : 'bomb_blue',
+                            location : cc.p(300,200)
+                        },
+                        {
+                            path : 'bomb_blue',
+                            location : cc.p(0,200)
+                        },
+                        {
+                            path : 'bomb_blue',
+                            location : cc.p(-150,200)
                         }
                     ],
                     sentences: [
                         {
                             id: 1,
-                            content: 'con cho',
+                            content: 'van phong',
                             type: false,
                         }
                     ],
                 },
+            ],
+            talkFrame: [
+                'talk1.png',
+                'talk2.png',
+                'talk3.png'
             ],
             setting: {
                 sound: true,
             },
             player: {
                 currentLevel: 0,
-            }
+            },
+            time_to_read: 1,
+            
         };
+        cc.sys.localStorage.removeItem('DATA');
         cc.sys.localStorage.setItem('DATA', JSON.stringify(DATA));
     },
 
