@@ -35,6 +35,31 @@ cc.Class({
         var DATA = {
             alllevel: [
                 {
+                    background_path: 'LEVEL_SCHOOL',
+                    stars_count: 0,
+                    enemies: [
+                        {
+                            path : 'bomb_blue',
+                            location : cc.p(300,200)
+                        },
+                        {
+                            path : 'bomb_blue',
+                            location : cc.p(0,200)
+                        },
+                        {
+                            path : 'bomb_blue',
+                            location : cc.p(-150,200)
+                        }
+                    ],
+                    sentences: [
+                        {
+                            id: 1,
+                            content: 'Trường học là ngôi nhà thứ hai của em',
+                            type: false,
+                        }
+                    ],
+                },
+                {
                     background_path: 'LEVEL_HOME',
                     stars_count: 0,
                     enemies: [
@@ -54,7 +79,7 @@ cc.Class({
                     sentences: [
                         {
                             id: 1,
-                            content: 'con cho o nha',
+                            content: 'nha',
                             type: false,
                         }
                     ],
@@ -79,36 +104,16 @@ cc.Class({
                     sentences: [
                         {
                             id: 1,
-                            content: 'con cho o van phong',
+                            content: 'van phong',
                             type: false,
                         }
                     ],
                 },
-                {
-                    background_path: 'LEVEL_SCHOOL',
-                    stars_count: 0,
-                    enemies: [
-                        {
-                            path : 'bomb_blue',
-                            location : cc.p(300,200)
-                        },
-                        {
-                            path : 'bomb_blue',
-                            location : cc.p(0,200)
-                        },
-                        {
-                            path : 'bomb_blue',
-                            location : cc.p(-150,200)
-                        }
-                    ],
-                    sentences: [
-                        {
-                            id: 1,
-                            content: 'con cho o truong',
-                            type: false,
-                        }
-                    ],
-                },
+            ],
+            talkFrame: [
+                'talk1.png',
+                'talk2.png',
+                'talk3.png'
             ],
             setting: {
                 sound: true,
@@ -117,7 +122,9 @@ cc.Class({
                 currentLevel: 0,
             },
             time_to_read: 1,
+            
         };
+        cc.sys.localStorage.removeItem('DATA');
         cc.sys.localStorage.setItem('DATA', JSON.stringify(DATA));
     },
 
