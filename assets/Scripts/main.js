@@ -21,6 +21,11 @@ cc.Class({
             default: null,
             type: cc.Prefab
         },
+
+        heart: {
+            default: null,
+            type: cc.Sprite
+        },
     },
 
     getRandom: function(min, max) {
@@ -106,7 +111,7 @@ cc.Class({
 
     decreaseBlood: function() {
         this.blood--;
-        console.log(this.blood);
+        this.heart.getComponent('heart').setHeart(this.blood);
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -148,6 +153,7 @@ cc.Class({
     start () {
         //this.createSentence();
         //this.createEnemies();
+        this.heart.getComponent('heart').setHeart(10);
         this.fire();
     },
 
