@@ -39,12 +39,7 @@ cc.Class({
                 cc.sequence(
                     cc.fadeIn(0.3),
                     cc.callFunc(()=>{
-                        cc.director.loadScene('muti');
-                        this.connection = window.io('http://10.45.78.95:3000');
-                        //this.connection.emit('location', 'concac');
-                        this.connection.on('your_room_name', (data)=>{
-                            console.log(data);
-                        });
+                        cc.director.loadScene('game');
                     }, this)
                 )
             );
