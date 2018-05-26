@@ -1,10 +1,10 @@
 {
   "__type__": "cc.AnimationClip",
-  "_name": "AnimationDog",
+  "_name": "AnimationMuti",
   "_objFlags": 0,
   "_rawFiles": null,
-  "_duration": 0.13333333333333333,
-  "sample": 15,
+  "_duration": 0.4,
+  "sample": 5,
   "speed": 1,
   "wrapMode": 2,
   "curveData": {
@@ -14,13 +14,13 @@
           {
             "frame": 0,
             "value": {
-              "__uuid__": "52a11a6c-c1ae-4f43-a1a9-2cae3746c349"
+              "__uuid__": "fd9d71aa-063c-4803-9089-e45a68e3ebdf"
             }
           },
           {
-            "frame": 0.06666666666666667,
+            "frame": 0.2,
             "value": {
-              "__uuid__": "0cb07c6d-a54d-4c32-80fb-ad3b36324822"
+              "__uuid__": "d27adc6a-7b0d-4c51-8cd0-6093df2babd9"
             }
           }
         ]
