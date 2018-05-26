@@ -44,8 +44,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 150,
-      "height": 150
+      "width": 250,
+      "height": 250
     },
     "_rotationX": 0,
     "_rotationY": 0,
@@ -96,7 +96,10 @@
     },
     "_enabled": true,
     "timeToRead": "Integer",
-    "speed": "Integer"
+    "speed": "Integer",
+    "type": "Boolean",
+    "enemy": "Integer",
+    "game": null
   },
   {
     "__type__": "cc.PrefabInfo",

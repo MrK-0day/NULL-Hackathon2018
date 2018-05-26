@@ -71,15 +71,15 @@ cc.Class({
         var subNode = new cc.Node('Label');
         subNode.setTag(0);
         subNode.color = new cc.Color(0, 0, 0);
-        subNode.width = 150;
-        subNode.height = 150;
+        subNode.width = 250;
+        subNode.height = 250;
         var text = subNode.addComponent(cc.Label);
         text.string = sentenceData.content;
         text.overflow = cc.Label.Overflow.SHRINK;
         text.enableWrapText = true;
         text.horizontalAlign = true;
         text.verticalAlign = true;
-        text.fontSize = 20;
+        text.fontSize = 32;
         var widget = subNode.addComponent(cc.Widget);
         widget.isAlignTop = true;
         widget.top = 0;

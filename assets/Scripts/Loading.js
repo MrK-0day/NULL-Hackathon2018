@@ -265,7 +265,7 @@ cc.Class({
             player: {
                 currentLevel: 0,
             },
-            time_to_read: 2,
+            time_to_read: 2.5,
             
         };
         cc.sys.localStorage.removeItem('DATA');
