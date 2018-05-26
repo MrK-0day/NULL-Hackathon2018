@@ -88,37 +88,6 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
-
-        var level = {
-            background_path: 'background',
-            stars_count: 0,
-            enemies: [
-                {
-                    path : 'bomb_blue',
-                    location : cc.p(300,200)
-                },
-                {
-                    path : 'bomb_blue',
-                    location : cc.p(0,200)
-                },
-                {
-                    path : 'bomb_blue',
-                    location : cc.p(-150,200)
-                }
-            ],
-            sentences: [
-                {
-                    id: 1,
-                    path: 'bomb_blue',
-                    content: 'con cho',
-                    type: false,
-                }
-            ],
-            time_to_read: 1,
-        };
-
-        cc.sys.localStorage.removeItem('levelData');
-        cc.sys.localStorage.setItem('levelData', JSON.stringify(level));
         this.levelData = JSON.parse(cc.sys.localStorage.getItem('levelData'));
         
         this.setBackground(this.levelData.background_path);

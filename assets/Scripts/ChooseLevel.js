@@ -34,9 +34,9 @@ cc.Class({
 
     onLoad () {
         this.node.on('touchend', (e)=>{
-            // var DATA = JSON.parse(cc.sys.localStorage.getItem('DATA'));
-            // var level = DATA.alllevel[this.level];
-            // cc.sys.localStorage.setItem('levelData', JSON.stringify(level));
+            var DATA = JSON.parse(cc.sys.localStorage.getItem('DATA'));
+            var level = DATA.alllevel[this.level];
+            cc.sys.localStorage.setItem('levelData', JSON.stringify(level));
             cc.director.loadScene('main');
         });
     },

@@ -35,52 +35,76 @@ cc.Class({
         var DATA = {
             alllevel: [
                 {
-                    background_path: 'background',
+                    background_path: 'LEVEL_HOME',
                     stars_count: 0,
                     enemies: [
                         {
-                            path : '',
-                            location : cc.p(0,0)
+                            path : 'bomb_blue',
+                            location : cc.p(300,200)
+                        },
+                        {
+                            path : 'bomb_blue',
+                            location : cc.p(0,200)
+                        },
+                        {
+                            path : 'bomb_blue',
+                            location : cc.p(-150,200)
                         }
                     ],
                     sentences: [
                         {
                             id: 1,
-                            content: 'con cho',
+                            content: 'con cho o nha',
                             type: false,
                         }
                     ],
                 },
                 {
-                    background_path: 'background',
+                    background_path: 'LEVEL_OFFICE',
                     stars_count: 0,
                     enemies: [
                         {
-                            path : '',
-                            location : cc.p(0,0)
+                            path : 'bomb_blue',
+                            location : cc.p(300,200)
+                        },
+                        {
+                            path : 'bomb_blue',
+                            location : cc.p(0,200)
+                        },
+                        {
+                            path : 'bomb_blue',
+                            location : cc.p(-150,200)
                         }
                     ],
                     sentences: [
                         {
                             id: 1,
-                            content: 'con cho',
+                            content: 'con cho o van phong',
                             type: false,
                         }
                     ],
                 },
                 {
-                    background_path: 'background',
+                    background_path: 'LEVEL_SCHOOL',
                     stars_count: 0,
                     enemies: [
                         {
-                            path : '',
-                            location : cc.p(0,0)
+                            path : 'bomb_blue',
+                            location : cc.p(300,200)
+                        },
+                        {
+                            path : 'bomb_blue',
+                            location : cc.p(0,200)
+                        },
+                        {
+                            path : 'bomb_blue',
+                            location : cc.p(-150,200)
                         }
                     ],
                     sentences: [
                         {
                             id: 1,
-                            content: 'con cho',
+                            content: 'con cho o truong',
                             type: false,
                         }
                     ],
@@ -91,7 +115,8 @@ cc.Class({
             },
             player: {
                 currentLevel: 0,
-            }
+            },
+            time_to_read: 1,
         };
         cc.sys.localStorage.setItem('DATA', JSON.stringify(DATA));
     },
