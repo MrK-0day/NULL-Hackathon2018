@@ -4,7 +4,8 @@ cc.Class({
     properties: {
         timeToRead: cc.Integer,
         speed: cc.Integer,
-        type: cc.Boolean, 
+        type: cc.Boolean,
+        enemy: cc.Integer,
         game: {
             default: null,
             type: cc.Node
@@ -12,12 +13,13 @@ cc.Class({
     },
 
     //TODO: tao mot loat hieu ung: sau vai giay xoa child(0), thu nho, di chuyen
-    setData: function(image_url, sentence_type) {
+    setData: function(image_url, sentence_type, enemy) {
         var self = this;
         cc.loader.loadRes(image_url, cc.SpriteFrame, function (err, spriteFrame) {
             self.node.getComponent(cc.Sprite).spriteFrame = spriteFrame;
         });
         this.type = sentence_type;
+        this.enemy = enemy;
     },
 
     setTimetoRead: function(time) {
@@ -70,7 +72,7 @@ cc.Class({
     },
 
     onLoad () {
-        this.playerPosition = cc.p(0, -320);
+        this.playerPosition = cc.p(0, -540);
         this.move();
         this.draggable = false;
    

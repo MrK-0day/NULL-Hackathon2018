@@ -55,7 +55,7 @@ cc.Class({
         var index = this.getRandom(0, this.enemies.length - 1);
         while (index == this.lastEnemy) index = this.getRandom(0, this.enemies.length - 1);
         this.lastEnemy = index;
-        return this.enemies[index];
+        return index;
     },
 
     createSentence: function() {
@@ -63,7 +63,7 @@ cc.Class({
         var enemy = this.getEnemy();
 
         var sentence = cc.instantiate(this.sentence);
-        sentence.getComponent('sentence').setData(this.talkFrame[this.getRandom(0, this.talkFrame.length - 1)], sentenceData.type);
+        sentence.getComponent('sentence').setData(this.talkFrame[this.getRandom(0, this.talkFrame.length - 1)], sentenceData.type, enemy);
         sentence.getComponent('sentence').setTimetoRead(this.time_to_read);
         sentence.getComponent('sentence').setSpeed(this.speed);
         sentence.getComponent('sentence').game = this;
@@ -92,7 +92,7 @@ cc.Class({
         
 
         sentence.addChild(subNode);
-        sentence.setPosition(enemy.location.x + 100, enemy.location.y - 100);
+        sentence.setPosition(enemy.location.x + 100, enemy.location.y + 100);
 
         this.node.addChild(sentence);
     },
@@ -137,7 +137,7 @@ cc.Class({
         this.enemies = this.levelData.enemies;
         this.sentences = this.levelData.sentences;
 
-        this.speed = 1;
+        this.speed = 3;
         this.blood = 10;
         this.fire_speed = 2;
 
@@ -147,17 +147,17 @@ cc.Class({
 
     fire() {
         var delay = new cc.DelayTime(this.fire_speed);
+        var delay_half = new cc.DelayTime(this.fire_speed/2);
 
         var fire = new cc.CallFunc(() => {
-            this.createSentence();
             this.createSentence();
         });
 
         var increaseSpeed = new cc.CallFunc(() => {
-            this.fire_speed -= 0.01;
+            this.fire_speed -= 0.001;
         });
 
-        var sequenceAction = new cc.Sequence(delay, fire, increaseSpeed);
+        var sequenceAction = new cc.Sequence(delay, fire, delay_half, fire, increaseSpeed);
 
         var repeatForeverAction = new cc.RepeatForever(sequenceAction);
         
