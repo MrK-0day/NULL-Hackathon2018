@@ -39,14 +39,17 @@ cc.Class({
                     stars_count: 0,
                     enemies: [
                         {
+                            id: 0,
                             path : 'bomb_blue',
                             location : cc.p(-491,257)
                         },
                         {
+                            id: 1,
                             path : 'bomb_blue',
                             location : cc.p(-23,277)
                         },
                         {
+                            id: 2,
                             path : 'bomb_blue',
                             location : cc.p(434,265)
                         }
@@ -64,14 +67,17 @@ cc.Class({
                     stars_count: 0,
                     enemies: [
                         {
+                            id: 0,
                             path : 'bomb_blue',
                             location : cc.p(-488,377)
                         },
                         {
+                            id: 1,
                             path : 'bomb_blue',
                             location : cc.p(12,371)
                         },
                         {
+                            id: 2,
                             path : 'bomb_blue',
                             location : cc.p(498,375)
                         }
@@ -89,14 +95,17 @@ cc.Class({
                     stars_count: 0,
                     enemies: [
                         {
+                            id: 0,
                             path : 'bomb_blue',
                             location : cc.p(-537,256)
                         },
                         {
+                            id: 1,
                             path : 'bomb_blue',
                             location : cc.p(-34,268)
                         },
                         {
+                            id: 2,
                             path : 'bomb_blue',
                             location : cc.p(434,271)
                         }

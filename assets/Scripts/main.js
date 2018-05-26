@@ -55,7 +55,7 @@ cc.Class({
         var index = this.getRandom(0, this.enemies.length - 1);
         while (index == this.lastEnemy) index = this.getRandom(0, this.enemies.length - 1);
         this.lastEnemy = index;
-        return index;
+        return this.enemies[index];
     },
 
     createSentence: function() {
@@ -63,7 +63,7 @@ cc.Class({
         var enemy = this.getEnemy();
 
         var sentence = cc.instantiate(this.sentence);
-        sentence.getComponent('sentence').setData(this.talkFrame[this.getRandom(0, this.talkFrame.length - 1)], sentenceData.type, enemy);
+        sentence.getComponent('sentence').setData(this.talkFrame[this.getRandom(0, this.talkFrame.length - 1)], sentenceData.type, enemy.id);
         sentence.getComponent('sentence').setTimetoRead(this.time_to_read);
         sentence.getComponent('sentence').setSpeed(this.speed);
         sentence.getComponent('sentence').game = this;
@@ -172,6 +172,8 @@ cc.Class({
     },
 
     update (dt) {
-        if (this.blood <= 0) cc.director.pause();
+        if (this.blood <= 0) {
+            cc.director.loadScene('EndGame');
+        }
     },
 });
