@@ -47,11 +47,10 @@ cc.Class({
         this.node.runAction(sequenceAction);
     },
 
-    moveBack(dx, dy) {
-        var move = new cc.MoveBy(1, cc.p(dx, dy));
+    moveBack(delta) {
+        var move = new cc.MoveBy(1, delta);
         var repeatForeverAction = new cc.RepeatForever(move);
         this.node.runAction(repeatForeverAction);
-        console.log(dx, dy);
     },
 
     onLoad () {
@@ -62,10 +61,8 @@ cc.Class({
         this.node.on(cc.Node.EventType.TOUCH_MOVE, (data) => {
             if (this.draggable) {
                 this.node.stopActionByTag(0);
-                console.log(data);
-                var startPoint = data._touches[0]._startPoint;
-                var endPoint = data._touches[0]._point;
-                this.moveBack(endPoint.x-startPoint.x, endPoint.y-startPoint.y);
+                var delta = data.getDelta();
+                this.moveBack(delta);
             }
         });
     },
