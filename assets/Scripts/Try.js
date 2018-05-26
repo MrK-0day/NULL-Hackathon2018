@@ -33,7 +33,7 @@ cc.Class({
 
     onLoad () {
         this.node.on('touchend', (e)=>{
-            cc.director.loadScene('muti');
+            cc.director.loadScene('main');
         });
     },
 
