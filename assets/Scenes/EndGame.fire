@@ -70,9 +70,6 @@
     "_components": [
       {
         "__id__": 13
-      },
-      {
-        "__id__": 14
       }
     ],
     "_prefab": null,
@@ -320,16 +317,16 @@
       "__uuid__": "28017616-607a-470b-828b-8253ccfcb833"
     },
     "_N$pressedSprite": {
-      "__uuid__": "bd6ff4ff-eefc-427c-b935-b8f6cf0e152d"
+      "__uuid__": "fd9d71aa-063c-4803-9089-e45a68e3ebdf"
     },
     "pressedSprite": {
-      "__uuid__": "bd6ff4ff-eefc-427c-b935-b8f6cf0e152d"
+      "__uuid__": "fd9d71aa-063c-4803-9089-e45a68e3ebdf"
     },
     "_N$hoverSprite": {
-      "__uuid__": "28017616-607a-470b-828b-8253ccfcb833"
+      "__uuid__": "d27adc6a-7b0d-4c51-8cd0-6093df2babd9"
     },
     "hoverSprite": {
-      "__uuid__": "28017616-607a-470b-828b-8253ccfcb833"
+      "__uuid__": "d27adc6a-7b0d-4c51-8cd0-6093df2babd9"
     },
     "_N$disabledSprite": {
       "__uuid__": "29158224-f8dd-4661-a796-1ffab537140e"
@@ -519,22 +516,5 @@
     },
     "_fitWidth": true,
     "_fitHeight": true
-  },
-  {
-    "__type__": "cc.AudioSource",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 2
-    },
-    "_enabled": true,
-    "_clip": {
-      "__uuid__": "10ed95ec-72ad-4fe3-9ef1-38c199d239af"
-    },
-    "_volume": 1,
-    "_mute": false,
-    "_loop": false,
-    "playOnLoad": true,
-    "preload": false
   }
 ]
