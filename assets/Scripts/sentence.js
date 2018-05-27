@@ -49,6 +49,7 @@ cc.Class({
         var destroy = new cc.CallFunc(() => {
             this.node.destroy();
             if (!this.type) this.game.getComponent('main').decreaseBlood();
+            else this.game.getComponent('main').increaseScore();
         });
 
         var sequenceAction = new cc.Sequence(delay, removeText, moveAndResize, destroy);
@@ -57,17 +58,19 @@ cc.Class({
     },
 
     moveBack(delta) {
+        console.log("Enter move back");
         var move = new cc.MoveBy(1, delta);
         var destroy = new cc.CallFunc(() => {
             if (this.node.x <= -cc.director.getWinSize().width/2
                 || this.node.x >= cc.director.getWinSize().width/2
                 || this.node.y <= -cc.director.getWinSize().height/2
                 || this.node.y >= cc.director.getWinSize().height/2) {
-                
+                if (this.type) this.game.getComponent('main').decreaseScore();
                 this.node.destroy();
             }
         });
-        var repeatForeverAction = new cc.RepeatForever(move);
+        var sequenceAction = new cc.Sequence(move, destroy);
+        var repeatForeverAction = new cc.RepeatForever(sequenceAction);
         this.node.runAction(repeatForeverAction);
     },
 
@@ -80,7 +83,7 @@ cc.Class({
             if (this.draggable) {
                 this.node.stopActionByTag(0);
                 var delta = data.getDelta();
-                this.moveBack(delta);
+                this.moveBack(delta); 
             }
         });
     },

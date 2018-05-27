@@ -26,6 +26,8 @@ cc.Class({
             default: null,
             type: cc.Sprite
         },
+
+        scoreLabel: cc.Label,
     },
 
     getRandom: function(min, max) {
@@ -125,6 +127,20 @@ cc.Class({
         }
     },
 
+    decreaseScore: function() {
+        if (this.score > 0) this.score--;
+        console.log(this.score);
+        this.scoreLabel.string = this.score;
+        //this.heart.getComponent('heart').setHeart(this.blood);
+    },
+
+    increaseScore: function() {
+        this.score++;
+        console.log(this.score);
+        this.scoreLabel.string = this.score;
+        //this.heart.getComponent('heart').setHeart(this.blood);
+    },
+
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
@@ -139,7 +155,8 @@ cc.Class({
 
         this.speed = 3;
         this.blood = 10;
-        this.fire_speed = 2;
+        this.score = 0;
+        this.fire_speed = 3;
 
         this.lastEnemy = -1;
         this.count = 0;
@@ -175,5 +192,6 @@ cc.Class({
         if (this.blood <= 0) {
             cc.director.loadScene('EndGame');
         }
+        if (this.score >= 10) cc.director.loadScene('Win');
     },
 });
